@@ -18,6 +18,7 @@ class _RegisterState extends State<Register> {
   //text field state
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +68,21 @@ class _RegisterState extends State<Register> {
                 ),
                 onPressed: () async {
                   if(_formKey.currentState.validate()){
-                    print(email);
-                    print(password);
+                    dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                    if(result == null){
+                      setState(() => error = 'Please supply a valid email');
+                    }
                   }
                 },
               ),
+              SizedBox(height: 12.0),
+              Text(
+                error,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 14.0
+                ),
+              )
             ],
           ),
         ),
