@@ -1,6 +1,8 @@
 # brew_crew
 
-A new Flutter project.
+A new Flutter application. Beggining with flutter and firebase. The application contains basic knowledge for mixing basic functions of flutter and google firebase, the tutorials are free and online.
+
+CREDIT: Thank You..! https://github.com/iamshaunjp
 
 ## Getting Started
 
