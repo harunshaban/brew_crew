@@ -7,7 +7,7 @@ class DatabaseService{
   final String uid;
   DatabaseService({ this.uid });
 
-  // Collection Referance
+  // Collection Reference
   final CollectionReference brewCollection = Firestore.instance.collection('brews');
 
   Future updateUserData(String sugars, String name, int strength) async {
@@ -34,7 +34,7 @@ class DatabaseService{
     return UserData(
       uid: uid,
       name: snapshot.data['name'],
-      sugar: snapshot.data['sugar'],
+      sugars: snapshot.data['sugar'],
       strength: snapshot.data['strength'],
     );
   }
